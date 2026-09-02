@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class DynamicGrabbable : XRGrabInteractable
+public class DynamicGrabbable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
 {
 
     private Vector3 initialAttachLocalPos;
@@ -27,7 +27,7 @@ public class DynamicGrabbable : XRGrabInteractable
     protected override void OnSelectEntering(SelectEnterEventArgs arg)
     {
         
-        if (arg.interactorObject is XRDirectInteractor)
+        if (arg.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor)
         {
             attachTransform.position = arg.interactorObject.transform.position;
             attachTransform.rotation = arg.interactorObject.transform.rotation;
